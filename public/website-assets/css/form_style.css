@@ -1,0 +1,326 @@
+.top-title-contact-bg {
+    background-color: #5b0000;
+    width: 900px;
+    height: 60px;
+    color: white;
+    border-radius: 20px;
+    padding: 18px 0px;
+}
+/* .form-title-img{
+    width: 450 !important;
+    height: ;
+} */
+.top-header-tagline {
+    border-top: 2px solid #5b0000;
+    border-bottom: 2px solid #5b0000;
+    max-width: 650px;
+    color: #5b0000;
+}
+.form-color-text{
+    color: #5b0000;
+}
+.header-title-address {
+    border: solid 2px black;
+    border-radius: 12px;
+}
+.postal-address {
+    width: 350px;
+    height: auto;
+    text-align: justify;
+}
+.old-center-input {
+    width: 100%;
+}
+.form-control-plaintext {
+    border-bottom: 2px dotted #111 !important;
+}
+/* .form-control-plaintext {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #212529;
+    background-color: transparent;
+    border: solid transparent;
+    border-width: 1px 0;
+} */
+.level-table {
+    border-color: white !important ;
+}
+/* .formtexts{
+    width:60% !important;
+} */
+.form-control-text {
+    display: inline-block !important;
+    width: 20% !important;
+    padding: 0px !important;
+    border: solid transparent;
+    border-bottom: 2px dotted #111 !important;
+}
+.encloser-checklist{
+    list-style-type: decimal;
+}
+@media (max-width: 768px) {
+    .jamiaform-border {
+        border-radius: 12px;
+        border: 1px solid grey;
+        padding: 10px !important;
+        padding-top: 50px;
+    }
+    .top-title-contact-bg {
+        height: 70px !important;
+        width: 678px;
+        padding: 15px 16px;
+    }
+    }
+    .submit-btn-margin{
+        margin-left: 126px !important;
+      }
+      @media (max-width: 425px) {
+        .jamiaform-border {
+            border-radius: 12px;
+            border: 1px solid grey;
+            padding: 10px !important;
+            padding-top: 50px;
+        }
+        .top-title-contact-bg {
+            height: 90px !important;
+            width: 375px ;
+            padding: 18px 16px;
+        }
+        }
+        .submit-btn-margin{
+            margin-left: 126px !important;
+          }
+      @media (max-width: 375px) {
+        .jamiaform-border {
+            border-radius: 12px;
+            border: 1px solid grey;
+            padding: 10px !important;
+            padding-top: 50px;
+        }
+        .top-title-contact-bg {
+            height: 90px !important;
+            width: 338px;
+            padding: 17px 16px;
+        }
+        }
+        .submit-btn-margin{
+            margin-left: 126px !important;
+          }
+          @media (max-width: 320px) {
+            .jamiaform-border {
+                border-radius: 12px;
+                border: 1px solid grey;
+                padding: 10px !important;
+                padding-top: 50px;
+            }
+            .top-title-contact-bg {
+                height: 90px !important;
+                width: 285px;
+            height: 103px !important;
+                padding: 14px 16px;
+            }
+            }
+            .submit-btn-margin{
+                margin-left: 126px !important;
+              }
+    
+.form-table-text{
+    display: inline-block !important;
+    width: 100% !important;
+    padding: 0px !important;
+    border: none !important;
+    /* border-bottom: 2px dotted #111 !important; */
+   
+}
+.form-justify-text{
+    text-align: justify;
+}
+.jamiaform-border{
+    border-radius: 12px;
+    border: 1px solid grey;
+    padding: 17px 17px;
+    /* padding-top: 50px; */
+}
+.form-content-size {
+    font-size: 15px;
+}
+.form-tilte-size{
+font-size: 24px;
+}
+.form-content-sizes{
+    font-size: 17px;
+}
+/* .submit-btn-margin{
+	margin-left: 849px ;
+  } */
+
+/*new form css*/
+#toast-container>div {
+    opacity: 0.9 !important;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90) !important;
+    filter: alpha(opacity=90) !important;
+    max-width: none !important;
+}
+
+.toast {
+    background-color: #5a8dee !important;
+}
+
+.toast-success {
+    background-color: #058243 !important;
+}
+
+.toast-error {
+    background-color: red !important;
+}
+
+.toast-info {
+    background-color: #00cfdd !important;
+}
+
+.toast-warning {
+    background-color: #fdac41 !important;
+}
+
+.btn-primary {
+    background-color: #0192d0;
+}
+
+.sec {
+    padding: 40px 0px 100px;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-width: 1px !important;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    width: 100%;
+    border: none !important;
+    outline: none;
+}
+
+.form-control-plaintext {
+    border-bottom: 2px dotted #111 !important;
+}
+
+.f16 {
+    font-size: 16px;
+    font-weight: 600;
+
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-tabs {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-tabs li {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 289px !important;
+    /* background-color: #ddd; */
+    text-align: center;
+
+}
+
+.sub_title {
+    font-size: 25px;
+
+}
+
+.nav-tabs li.active {
+    background-color: #54ba20;
+    color: white;
+    border: 2px solid #54ba20;
+}
+
+.btn_w {
+    width: 10%;
+}
+.btn_ws {
+    width: 10%;
+}
+
+.tab-width {
+    width: 100%;
+}
+
+.form_title {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+@media(max-width:425px) {
+    .tab-width {
+        width: 1150px;
+    }
+
+    .btn_w {
+        width: 40%;
+    }
+
+    .form_title {
+        font-size: 27px;
+        font-weight: 700;
+    }
+
+    .sub_title {
+        font-size: 18px;
+
+    }
+}
+
+.text_wrap {
+    word-wrap: break-word;
+}
+
+.loading {
+    display: none;
+    color: blue;
+    font-weight: bold;
+}
+.jua_input{
+    width: 30% !important;
+}

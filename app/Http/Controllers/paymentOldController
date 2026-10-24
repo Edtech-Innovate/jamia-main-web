@@ -1,0 +1,95 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Payments;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+class PaymentController extends Controller
+{
+  public function index()
+  {
+    return view('web.parts.payment_form');
+  }
+  public function show()
+  {
+    $paymentshow=Payments::all();
+    return view('content.payment_form',compact('paymentshow'));
+  }
+
+
+  public function store(Request $request)
+  {
+    $validated = Validator::make($request->all(), [
+      'region' => 'required',
+      'institute_name' => 'required',
+      'name' => 'required',
+      'mobile' => 'required',
+      'email' => 'required',
+      'purpose_of_payment' => 'required',
+      'country_code'=> 'required',
+    ]);
+
+    if ($validated->fails()) {
+      return response()->json(['status' => false, 'msg' => $validated->errors()]);
+    }
+
+    $txnId = uniqid();
+    $amount = $request->purpose_of_payment == 'Center Authorization Fee' ? ($request->region == 'India' ? 20200 : ($request->region == 'International' ? 55000 : 0)) : 0;
+
+    if (empty($amount)) {
+      return response()->json(['status' => false, 'msg' => 'Currently, we are not accepting fee for ' . $request->purpose_of_payment]);
+    }
+    
+    $payment = new Payments;
+    $payment->name = $request->name;
+    $payment->region = $request->region;
+    $payment->institute_name = $request->institute_name;
+    $payment->mobile = $request->mobile;
+    $payment->email = $request->email;
+    $payment->purpose_of_payment = $request->purpose_of_payment;
+    $payment->txn_id = $txnId;
+    $payment->amount = $amount;  
+    $countryCode = $request->country_name . '+' .$request->country_code;
+    $payment->country_code = $countryCode;
+    $payment->save();
+    if ($payment) {
+      return response()->json(['status'=>true, 'url'=>"https://iitseducation.org/make-payment?amount=$amount&txnId=$txnId&mobile=$request->mobile&merchantUserId=$request->institute_name"]);
+    }else{
+      return response()->json(['status'=>true, 'message'=>'Something went wrong!']);  
+    }
+  }
+
+  public function update(Request $request)
+  {
+    $data = $request->getContent();
+    $data = json_decode($data);
+    $response = base64_decode($data->response);
+    $jsonData = $response;
+    $response = json_decode($response);
+    if($response->success){
+        $gatewayId = $response->data->transactionId;
+        $txnId = $response->data->merchantTransactionId;
+        $amount = $response->data->amount/100;
+      
+        $update = Payments::where('txn_id', $txnId)
+       ->update([
+           'gateway_id' => $gatewayId,
+           'amount' => $amount,
+           'response' => $jsonData
+        ]);
+        
+        if($update){
+            return response()->json(['status' => true, 'msg' => 'Payment updated successfully!']);
+        }else{
+            return response()->json(['status' => false, 'msg' => 'Something went wrong!']);
+        }
+    }
+  }
+
+  public function destroy($id)
+  {
+  }
+}
